@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduConnect - Prototype</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">Edu<span>Connect</span></div>
+  <nav>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#kelas">Kelas</a>
+    <a href="#materi">Materi</a>
+    <a href="#progress">Progress</a>
+  </nav>
+  <button id="loginBtn" class="outline">Login</button>
+</header>
+<section class="hero" id="dashboard">
+  <div class="hero-text">
+    <p class="label">PLATFORM PEMBELAJARAN DIGITAL</p>
+    <h1>Belajar lebih mudah,<br><span>terhubung & terukur.</span></h1>
+    <p>EduConnect membantu siswa mengakses kelas, materi, dan memantau perkembangan belajar dalam satu platform.</p>
+    <a class="primary" href="#kelas">Mulai Belajar</a>
+  </div>
+  <div class="dashboard-card">
+    <p>Progress Minggu Ini</p>
+    <strong>82%</strong>
+    <div class="bar"><i></i></div>
+    <small>8 dari 10 target materi selesai</small>
+  </div>
+</section>
+<section id="kelas">
+<h2>Kelas Populer</h2><p class="sub">Pilih kelas untuk mulai belajar.</p>
+<div class="cards">
+  <article><div class="icon">💻</div><h3>Algoritma & Pemrograman</h3><p>Algoritma, struktur data, dan dasar coding.</p><button onclick="openClass('Algoritma & Pemrograman')">Lihat Kelas</button></article>
+  <article><div class="icon">🌐</div><h3>Jaringan Komputer</h3><p>IP Address, routing, switching, dan Cisco.</p><button onclick="openClass('Jaringan Komputer')">Lihat Kelas</button></article>
+  <article><div class="icon">🗄️</div><h3>Database</h3><p>Konsep database, SQL, dan pengelolaan data.</p><button onclick="openClass('Database')">Lihat Kelas</button></article>
+</div>
+</section>
+<section id="materi" class="light">
+<h2>Materi Pembelajaran</h2>
+<div class="materials">
+  <div><b>01</b><span>Modul Dasar Pemrograman</span><button onclick="finish('Dasar Pemrograman')">Pelajari</button></div>
+  <div><b>02</b><span>Modul Jaringan Cisco</span><button onclick="finish('Jaringan Cisco')">Pelajari</button></div>
+  <div><b>03</b><span>Modul Database SQL</span><button onclick="finish('Database SQL')">Pelajari</button></div>
+</div>
+</section>
+<section id="progress">
+<h2>Monitoring Progress</h2>
+<div class="stats">
+  <div><strong id="done">8</strong><span>Materi selesai</span></div>
+  <div><strong>3</strong><span>Kelas aktif</span></div>
+  <div><strong id="percent">82%</strong><span>Progress</span></div>
+</div>
+</section>
+<footer>© 2026 EduConnect — Prototype Project</footer>
+<script src="script.js"></script>
+</body>
+</html>
