@@ -3,82 +3,133 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="EduConnect - platform pembelajaran digital untuk siswa.">
-<title>EduConnect — Platform Pembelajaran Digital</title>
+<meta name="description" content="EduConnect - aplikasi pembelajaran digital siswa">
+<title>EduConnect | Student Learning Platform</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="header">
-  <a class="logo" href="#dashboard">Edu<span>Connect</span></a>
-  <nav>
-    <a href="#dashboard">Dashboard</a>
-    <a href="#kelas">Kelas</a>
-    <a href="#materi">Materi</a>
-    <a href="#progress">Progress</a>
-  </nav>
-  <button id="loginBtn" class="outline">Login</button>
-</header>
 
-<main>
-<section class="hero" id="dashboard">
-  <div class="hero-text">
-    <p class="label">PLATFORM PEMBELAJARAN DIGITAL</p>
-    <h1>Belajar lebih mudah,<br><span>terhubung & terukur.</span></h1>
-    <p>EduConnect membantu siswa mengakses kelas, materi, dan memantau perkembangan belajar dalam satu platform.</p>
-    <div class="hero-actions">
-      <a class="primary" href="#kelas">Mulai Belajar</a>
-      <a class="secondary" href="#progress">Lihat Progress</a>
-    </div>
-    <div class="trust"><span>✓ Materi terstruktur</span><span>✓ Progress real-time</span><span>✓ Mudah digunakan</span></div>
-  </div>
-  <div class="dashboard-card">
-    <div class="card-top"><span>Progress Minggu Ini</span><span class="status">Aktif</span></div>
-    <strong id="heroPercent">82%</strong>
-    <div class="bar"><i id="heroBar"></i></div>
-    <small><b id="heroDone">8</b> dari 10 target materi selesai</small>
-    <div class="mini-stats"><div><b>3</b><span>Kelas aktif</span></div><div><b>12</b><span>Materi tersedia</span></div></div>
-  </div>
-</section>
-
-<section id="kelas">
-  <div class="section-heading"><div><p class="eyebrow">PEMBELAJARAN</p><h2>Kelas Populer</h2><p class="sub">Pilih kelas untuk mulai belajar dan tingkatkan kemampuanmu.</p></div></div>
-  <div class="cards">
-    <article class="course-card"><div class="icon">💻</div><span class="tag">Pemrograman</span><h3>Algoritma & Pemrograman</h3><p>Algoritma, struktur data, dan dasar coding untuk pemula.</p><div class="course-meta"><span>📚 4 Materi</span><span>⏱️ 6 Jam</span></div><button onclick="openClass('Algoritma & Pemrograman')">Lihat Kelas →</button></article>
-    <article class="course-card"><div class="icon">🌐</div><span class="tag">Jaringan</span><h3>Jaringan Komputer</h3><p>IP Address, routing, switching, dan dasar jaringan Cisco.</p><div class="course-meta"><span>📚 4 Materi</span><span>⏱️ 5 Jam</span></div><button onclick="openClass('Jaringan Komputer')">Lihat Kelas →</button></article>
-    <article class="course-card"><div class="icon">🗄️</div><span class="tag">Database</span><h3>Database & SQL</h3><p>Konsep database, SQL, relasi tabel, dan pengelolaan data.</p><div class="course-meta"><span>📚 4 Materi</span><span>⏱️ 4 Jam</span></div><button onclick="openClass('Database & SQL')">Lihat Kelas →</button></article>
-  </div>
-</section>
-
-<section id="materi" class="light">
-  <div class="section-heading"><div><p class="eyebrow">MATERI TERBARU</p><h2>Materi Pembelajaran</h2><p class="sub">Lanjutkan materi yang sedang kamu pelajari.</p></div></div>
-  <div class="materials">
-    <div><b>01</b><div class="material-info"><strong>Modul Dasar Pemrograman</strong><span>Variabel, percabangan, perulangan, dan fungsi</span></div><span class="material-progress">80%</span><button onclick="finish('Dasar Pemrograman')">Pelajari</button></div>
-    <div><b>02</b><div class="material-info"><strong>Modul Jaringan Cisco</strong><span>IP Address, subnetting, routing, dan switching</span></div><span class="material-progress">70%</span><button onclick="finish('Jaringan Cisco')">Pelajari</button></div>
-    <div><b>03</b><div class="material-info"><strong>Modul Database SQL</strong><span>SELECT, INSERT, UPDATE, DELETE, dan relasi</span></div><span class="material-progress">60%</span><button onclick="finish('Database SQL')">Pelajari</button></div>
-  </div>
-</section>
-
-<section id="progress">
-  <div class="progress-header"><div><p class="eyebrow">PERKEMBANGAN BELAJAR</p><h2>Monitoring Progress</h2><p class="sub">Pantau pencapaian belajarmu dalam satu dashboard.</p></div><div class="goal">🎯 Target minggu ini <b>80%</b></div></div>
-  <div class="stats">
-    <div><span class="stat-icon">📚</span><strong id="done">8</strong><span>Materi selesai</span></div>
-    <div><span class="stat-icon">🎓</span><strong>3</strong><span>Kelas aktif</span></div>
-    <div><span class="stat-icon">📈</span><strong id="percent">82%</strong><span>Progress belajar</span></div>
-  </div>
-</section>
-</main>
-
-<footer>© 2026 EduConnect — Prototype Project</footer>
-
-<div id="modal" class="modal hidden">
-  <div class="modal-box">
-    <button class="close" onclick="closeModal()">×</button>
-    <div class="modal-icon">🎓</div>
-    <h3 id="modalTitle">EduConnect</h3>
-    <p id="modalText"></p>
-    <button class="primary modal-btn" onclick="closeModal()">Mulai Sekarang</button>
+<div id="loginPage" class="login-page">
+  <div class="login-card">
+    <div class="login-brand">Edu<span>Connect</span></div>
+    <div class="login-icon">🎓</div>
+    <h1>Selamat Datang</h1>
+    <p>Masuk ke dashboard siswa EduConnect untuk melanjutkan pembelajaran.</p>
+    <form id="loginForm">
+      <label>Email / Username</label>
+      <input id="username" type="text" placeholder="contoh: siswa" required>
+      <label>Password</label>
+      <div class="password-wrap">
+        <input id="password" type="password" placeholder="contoh: 123456" required>
+        <button type="button" id="showPassword">Lihat</button>
+      </div>
+      <button class="login-submit" type="submit">Masuk ke EduConnect</button>
+      <p id="loginError" class="login-error"></p>
+    </form>
+    <div class="demo-login"><b>Akun demo tugas:</b><br>Username: <b>siswa</b> &nbsp; Password: <b>123456</b></div>
   </div>
 </div>
+
+<div id="app" class="app hidden">
+  <aside class="sidebar">
+    <div class="brand">Edu<span>Connect</span></div>
+    <div class="student-mini"><div class="avatar" id="sideAvatar">A</div><div><b id="sideName">Andi</b><small>Siswa</small></div></div>
+    <nav class="side-nav">
+      <a href="#dashboard" class="active" data-section="dashboard">🏠 <span>Dashboard</span></a>
+      <a href="#kelas" data-section="kelas">📚 <span>Kelas Saya</span></a>
+      <a href="#materi" data-section="materi">📖 <span>Materi</span></a>
+      <a href="#progress" data-section="progress">📊 <span>Progress</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <a href="#profil">⚙️ <span>Profil</span></a>
+      <button id="logoutBtn">↪ <span>Keluar</span></button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button id="menuBtn" class="menu-btn">☰</button>
+      <div><span class="top-label">DASHBOARD SISWA</span><h2 id="pageTitle">Dashboard</h2></div>
+      <div class="top-actions"><span class="date" id="today"></span><div class="avatar small" id="topAvatar">A</div></div>
+    </header>
+
+    <section id="dashboard" class="page-section">
+      <div class="welcome">
+        <div><p class="eyebrow">SELAMAT BELAJAR 👋</p><h1>Halo, <span id="welcomeName">Andi</span>!</h1><p>Siap melanjutkan perjalanan belajarmu hari ini?</p></div>
+        <a class="primary" href="#materi">Lanjut Belajar →</a>
+      </div>
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-icon blue">📚</div><div><strong id="statDone">8</strong><span>Materi selesai</span></div></div>
+        <div class="stat-card"><div class="stat-icon green">🎓</div><div><strong>3</strong><span>Kelas aktif</span></div></div>
+        <div class="stat-card"><div class="stat-icon orange">⏱️</div><div><strong>12</strong><span>Jam belajar</span></div></div>
+        <div class="stat-card"><div class="stat-icon purple">🏆</div><div><strong id="statProgress">82%</strong><span>Progress total</span></div></div>
+      </div>
+      <div class="dashboard-grid">
+        <div class="panel">
+          <div class="panel-head"><div><h3>Aktivitas Belajar</h3><p>Ringkasan perkembangan minggu ini</p></div><span class="badge">Minggu ini</span></div>
+          <div class="chart">
+            <div class="bar-chart"><i style="height:45%"></i><i style="height:65%"></i><i style="height:52%"></i><i style="height:80%"></i><i style="height:68%"></i><i style="height:90%"></i><i style="height:74%"></i></div>
+            <div class="chart-labels"><span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span><span>Min</span></div>
+          </div>
+        </div>
+        <div class="panel progress-panel">
+          <div class="panel-head"><div><h3>Progress Minggu Ini</h3><p>Target belajar</p></div></div>
+          <div class="circle-progress"><span id="circleText">82%</span></div>
+          <p class="center-text"><b id="targetText">8 dari 10</b> materi selesai</p>
+          <a href="#progress" class="text-link">Lihat detail progress →</a>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><div><h3>Kelas yang Sedang Dipelajari</h3><p>Lanjutkan kelasmu</p></div><a href="#kelas" class="text-link">Lihat semua</a></div>
+        <div class="mini-courses">
+          <div class="mini-course"><span>💻</span><div><b>Algoritma & Pemrograman</b><small>Progress 80%</small></div><button onclick="openCourse('Algoritma & Pemrograman')">Buka</button></div>
+          <div class="mini-course"><span>🌐</span><div><b>Jaringan Komputer</b><small>Progress 70%</small></div><button onclick="openCourse('Jaringan Komputer')">Buka</button></div>
+          <div class="mini-course"><span>🗄️</span><div><b>Database & SQL</b><small>Progress 60%</small></div><button onclick="openCourse('Database & SQL')">Buka</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kelas" class="page-section">
+      <div class="section-title"><p class="eyebrow">PEMBELAJARAN</p><h1>Kelas Saya</h1><p>Kelola dan lanjutkan semua kelas yang sedang kamu ikuti.</p></div>
+      <div class="filter-row"><button class="filter active">Semua Kelas</button><button class="filter">Sedang Berjalan</button><button class="filter">Selesai</button></div>
+      <div class="course-grid">
+        <article class="course"><div class="course-cover blue-cover">💻</div><div class="course-body"><span class="tag">Pemrograman</span><h3>Algoritma & Pemrograman</h3><p>Pelajari logika algoritma, struktur data, dan dasar pemrograman.</p><div class="course-info"><span>📖 4 Materi</span><span>⏱ 6 Jam</span></div><div class="progress-line"><i style="width:80%"></i></div><div class="course-bottom"><b>80%</b><button onclick="openCourse('Algoritma & Pemrograman')">Lanjutkan</button></div></div></article>
+        <article class="course"><div class="course-cover green-cover">🌐</div><div class="course-body"><span class="tag green-tag">Jaringan</span><h3>Jaringan Komputer</h3><p>IP Address, subnetting, routing, switching, dan simulasi Cisco.</p><div class="course-info"><span>📖 4 Materi</span><span>⏱ 5 Jam</span></div><div class="progress-line green-line"><i style="width:70%"></i></div><div class="course-bottom"><b>70%</b><button onclick="openCourse('Jaringan Komputer')">Lanjutkan</button></div></div></article>
+        <article class="course"><div class="course-cover purple-cover">🗄️</div><div class="course-body"><span class="tag purple-tag">Database</span><h3>Database & SQL</h3><p>Belajar SQL, tabel, relasi, query, dan pengelolaan database.</p><div class="course-info"><span>📖 4 Materi</span><span>⏱ 4 Jam</span></div><div class="progress-line purple-line"><i style="width:60%"></i></div><div class="course-bottom"><b>60%</b><button onclick="openCourse('Database & SQL')">Lanjutkan</button></div></div></article>
+      </div>
+    </section>
+
+    <section id="materi" class="page-section">
+      <div class="section-title"><p class="eyebrow">PUSAT PEMBELAJARAN</p><h1>Materi Pembelajaran</h1><p>Akses modul pembelajaran dan tandai materi yang sudah selesai.</p></div>
+      <div class="material-list">
+        <div class="material-row"><div class="number">01</div><div class="material-icon">💻</div><div class="material-content"><span class="tag">Algoritma</span><h3>Dasar Pemrograman</h3><p>Variabel, tipe data, percabangan, perulangan, dan fungsi.</p></div><div class="material-status"><span>80%</span><div class="progress-line"><i style="width:80%"></i></div></div><button onclick="completeMaterial('Dasar Pemrograman')">Pelajari</button></div>
+        <div class="material-row"><div class="number">02</div><div class="material-icon">🌐</div><div class="material-content"><span class="tag green-tag">Jaringan</span><h3>Modul Jaringan Cisco</h3><p>IP Address, subnetting, routing, switching, dan konfigurasi dasar.</p></div><div class="material-status"><span>70%</span><div class="progress-line green-line"><i style="width:70%"></i></div></div><button onclick="completeMaterial('Jaringan Cisco')">Pelajari</button></div>
+        <div class="material-row"><div class="number">03</div><div class="material-icon">🗄️</div><div class="material-content"><span class="tag purple-tag">Database</span><h3>Database SQL</h3><p>SELECT, INSERT, UPDATE, DELETE, primary key, dan relasi tabel.</p></div><div class="material-status"><span>60%</span><div class="progress-line purple-line"><i style="width:60%"></i></div></div><button onclick="completeMaterial('Database SQL')">Pelajari</button></div>
+        <div class="material-row"><div class="number">04</div><div class="material-icon">🧩</div><div class="material-content"><span class="tag orange-tag">Praktik</span><h3>Latihan Project EduConnect</h3><p>Latihan membuat fitur aplikasi dan menguji hasil project.</p></div><div class="material-status"><span>40%</span><div class="progress-line orange-line"><i style="width:40%"></i></div></div><button onclick="completeMaterial('Latihan Project EduConnect')">Pelajari</button></div>
+      </div>
+    </section>
+
+    <section id="progress" class="page-section">
+      <div class="section-title"><p class="eyebrow">LAPORAN BELAJAR</p><h1>Progress Saya</h1><p>Pantau pencapaian belajar dan target mingguanmu.</p></div>
+      <div class="progress-overview">
+        <div class="big-progress"><div class="circle-progress large"><span id="bigPercent">82%</span></div><h3>Progress Keseluruhan</h3><p>Terus belajar untuk mencapai 100%.</p></div>
+        <div class="progress-details"><div><span>Materi selesai</span><b id="progressDone">8 / 10</b></div><div><span>Kelas aktif</span><b>3 kelas</b></div><div><span>Target mingguan</span><b>80%</b></div><div><span>Jam belajar</span><b>12 jam</b></div></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><div><h3>Progress per Kelas</h3><p>Perkembangan setiap mata kuliah</p></div></div>
+        <div class="class-progress"><div><div><b>Algoritma & Pemrograman</b><span>80%</span></div><div class="progress-line"><i style="width:80%"></i></div></div><div><div><b>Jaringan Komputer</b><span>70%</span></div><div class="progress-line green-line"><i style="width:70%"></i></div></div><div><div><b>Database & SQL</b><span>60%</span></div><div class="progress-line purple-line"><i style="width:60%"></i></div></div></div>
+      </div>
+    </section>
+
+    <section id="profil" class="page-section">
+      <div class="section-title"><p class="eyebrow">AKUN</p><h1>Profil Siswa</h1><p>Informasi akun pengguna EduConnect.</p></div>
+      <div class="profile-card"><div class="avatar big" id="profileAvatar">A</div><div><h2 id="profileName">Andi</h2><p>Siswa • Mahasiswa</p><span class="badge">Akun Demo</span></div></div>
+    </section>
+  </main>
+</div>
+
+<div id="toast" class="toast"></div>
+<div id="courseModal" class="modal hidden"><div class="modal-box"><button class="close" onclick="closeCourse()">×</button><div class="modal-icon">🎓</div><h2 id="modalCourseTitle">Kelas</h2><p id="modalCourseText"></p><button class="login-submit" onclick="closeCourse()">Mulai Belajar</button></div></div>
 
 <script src="script.js"></script>
 </body>
